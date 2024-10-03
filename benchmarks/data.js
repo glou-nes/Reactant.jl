@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727841582352,
+  "lastUpdate": 1727924938011,
   "repoUrl": "https://github.com/EnzymeAD/Reactant.jl",
   "entries": {
     "Reactant.jl Benchmarks": [
@@ -610,6 +610,246 @@ window.BENCHMARK_DATA = {
             "value": 2525837503,
             "unit": "ns",
             "extra": "gctime=73044260\nmemory=1340496208\nallocs=7650\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "gh@wsmoses.com",
+            "name": "William Moses",
+            "username": "wsmoses"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "ab92877b5a07d3b4b3a73a8965a77113335da0bf",
+          "message": "Arm64 (#147)\n\n* try arm64\r\n\r\n* fix maybe",
+          "timestamp": "2024-10-02T21:12:23-05:00",
+          "tree_id": "4928d36b6532f3ff2de2370499df2c8186567f1b",
+          "url": "https://github.com/EnzymeAD/Reactant.jl/commit/ab92877b5a07d3b4b3a73a8965a77113335da0bf"
+        },
+        "date": 1727924936203,
+        "tool": "julia",
+        "benches": [
+          {
+            "name": "ViT base (256 x 256 x 3 x 32)/forward/CUDA/Reactant",
+            "value": 1433938661,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21183152\nallocs=345052\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT base (256 x 256 x 3 x 32)/forward/CUDA/Lux",
+            "value": 241225931,
+            "unit": "ns",
+            "extra": "gctime=105280115\nmemory=2289624\nallocs=45189\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT base (256 x 256 x 3 x 32)/forward/CPU/Reactant",
+            "value": 5293983326,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21183152\nallocs=345052\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT base (256 x 256 x 3 x 32)/forward/CPU/Lux",
+            "value": 17066026908,
+            "unit": "ns",
+            "extra": "gctime=1023855564\nmemory=9667628832\nallocs=17443\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT small (256 x 256 x 3 x 4)/forward/CUDA/Reactant",
+            "value": 1370513178,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21183152\nallocs=345052\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT small (256 x 256 x 3 x 4)/forward/CUDA/Lux",
+            "value": 8307967.5,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=579584\nallocs=21996\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT small (256 x 256 x 3 x 4)/forward/CPU/Reactant",
+            "value": 1626851066.5,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21182816\nallocs=345051\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT small (256 x 256 x 3 x 4)/forward/CPU/Lux",
+            "value": 2450375926.5,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=745497744\nallocs=4746\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT tiny (256 x 256 x 3 x 32)/forward/CUDA/Reactant",
+            "value": 1384065918.5,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21183584\nallocs=345054\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT tiny (256 x 256 x 3 x 32)/forward/CUDA/Lux",
+            "value": 88623982,
+            "unit": "ns",
+            "extra": "gctime=71464609\nmemory=579728\nallocs=22005\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT tiny (256 x 256 x 3 x 32)/forward/CPU/Reactant",
+            "value": 2188317241,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21184160\nallocs=345055\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT tiny (256 x 256 x 3 x 32)/forward/CPU/Lux",
+            "value": 3783884903.5,
+            "unit": "ns",
+            "extra": "gctime=132591830.5\nmemory=2531928864\nallocs=13603\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT tiny (256 x 256 x 3 x 4)/forward/CUDA/Reactant",
+            "value": 1401367836.5,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21182816\nallocs=345051\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT tiny (256 x 256 x 3 x 4)/forward/CUDA/Lux",
+            "value": 7284208,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=579584\nallocs=21996\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT tiny (256 x 256 x 3 x 4)/forward/CPU/Reactant",
+            "value": 1462297272.5,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21182816\nallocs=345051\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT tiny (256 x 256 x 3 x 4)/forward/CPU/Lux",
+            "value": 1424961515,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=448016080\nallocs=3294\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT tiny (256 x 256 x 3 x 16)/forward/CUDA/Reactant",
+            "value": 1400469080,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21182816\nallocs=345051\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT tiny (256 x 256 x 3 x 16)/forward/CUDA/Lux",
+            "value": 81326117.5,
+            "unit": "ns",
+            "extra": "gctime=70769265\nmemory=579600\nallocs=21997\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT tiny (256 x 256 x 3 x 16)/forward/CPU/Reactant",
+            "value": 1760867772,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21182816\nallocs=345051\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT tiny (256 x 256 x 3 x 16)/forward/CPU/Lux",
+            "value": 2319602333,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=1341138368\nallocs=7760\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT small (256 x 256 x 3 x 16)/forward/CUDA/Reactant",
+            "value": 1367132681,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21182816\nallocs=345051\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT small (256 x 256 x 3 x 16)/forward/CUDA/Lux",
+            "value": 92864268,
+            "unit": "ns",
+            "extra": "gctime=75291982\nmemory=579600\nallocs=21997\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT small (256 x 256 x 3 x 16)/forward/CPU/Reactant",
+            "value": 2237352484,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21183008\nallocs=345052\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT small (256 x 256 x 3 x 16)/forward/CPU/Lux",
+            "value": 4234209066,
+            "unit": "ns",
+            "extra": "gctime=260017329\nmemory=2531061152\nallocs=13523\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT small (256 x 256 x 3 x 32)/forward/CUDA/Reactant",
+            "value": 1386068553,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21182816\nallocs=345051\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT small (256 x 256 x 3 x 32)/forward/CUDA/Lux",
+            "value": 117300918,
+            "unit": "ns",
+            "extra": "gctime=77736793.5\nmemory=579856\nallocs=22009\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT small (256 x 256 x 3 x 32)/forward/CPU/Reactant",
+            "value": 3133188515,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21182816\nallocs=345051\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT small (256 x 256 x 3 x 32)/forward/CPU/Lux",
+            "value": 8735211128,
+            "unit": "ns",
+            "extra": "gctime=161840326\nmemory=4910335712\nallocs=13603\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT base (256 x 256 x 3 x 16)/forward/CUDA/Reactant",
+            "value": 1391545514,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21182816\nallocs=345051\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT base (256 x 256 x 3 x 16)/forward/CUDA/Lux",
+            "value": 134529716.5,
+            "unit": "ns",
+            "extra": "gctime=77236762\nmemory=581120\nallocs=22072\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT base (256 x 256 x 3 x 16)/forward/CPU/Reactant",
+            "value": 3316472465,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21182816\nallocs=345051\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT base (256 x 256 x 3 x 16)/forward/CPU/Lux",
+            "value": 5726214214.5,
+            "unit": "ns",
+            "extra": "gctime=342167034.5\nmemory=4909469664\nallocs=13523\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT base (256 x 256 x 3 x 4)/forward/CUDA/Reactant",
+            "value": 1374340443,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21183104\nallocs=345052\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT base (256 x 256 x 3 x 4)/forward/CUDA/Lux",
+            "value": 78982601.5,
+            "unit": "ns",
+            "extra": "gctime=67384230\nmemory=580400\nallocs=22047\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT base (256 x 256 x 3 x 4)/forward/CPU/Reactant",
+            "value": 1899222307.5,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21182816\nallocs=345051\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT base (256 x 256 x 3 x 4)/forward/CPU/Lux",
+            "value": 2483023554,
+            "unit": "ns",
+            "extra": "gctime=97279868\nmemory=1340496208\nallocs=7650\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
           }
         ]
       }
