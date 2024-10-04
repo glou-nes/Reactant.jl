@@ -514,6 +514,20 @@ gentbl_cc_library(
     tblgen = "//:mlir-jl-tblgen",
 )
 
+gentbl_cc_library(
+    name = "IFRTJLIncGen",
+    tbl_outs = [(
+            ["--generator=jl-op-defs", "--disable-module-wrap=0"],
+            "IFRT.inc.jl"
+        )
+    ],
+    td_file = "@xla//xla/python/ifrt/ir:ifrt_ops.td",
+    deps = [
+        "@xla//xla/python/ifrt/ir:ifrt_td",
+    ],
+    tblgen = "//:mlir-jl-tblgen",
+)
+
 genrule(
     name = "libMLIR_h.jl",
     tags = [
