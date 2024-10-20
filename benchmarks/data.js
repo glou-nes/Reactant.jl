@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1729431468375,
+  "lastUpdate": 1729432645318,
   "repoUrl": "https://github.com/EnzymeAD/Reactant.jl",
   "entries": {
     "Reactant.jl Benchmarks": [
@@ -8314,6 +8314,570 @@ window.BENCHMARK_DATA = {
             "value": 3595441508,
             "unit": "ns",
             "extra": "gctime=17061277.5\nmemory=1340481296\nallocs=7684\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sergio.sanchez.ramirez+git@bsc.es",
+            "name": "Sergio Sánchez Ramírez",
+            "username": "mofeing"
+          },
+          "committer": {
+            "email": "sergio.sanchez.ramirez+git@bsc.es",
+            "name": "Sergio Sánchez Ramírez",
+            "username": "mofeing"
+          },
+          "distinct": true,
+          "id": "fc5524a6517a5f939a052fabaaa7af6159ba06f0",
+          "message": "remove sudo invocation in \"regenerate-dialects.yml\"",
+          "timestamp": "2024-10-20T12:56:57+02:00",
+          "tree_id": "2549c0a114fc44bec7fb22ea81958efebe7f2138",
+          "url": "https://github.com/EnzymeAD/Reactant.jl/commit/fc5524a6517a5f939a052fabaaa7af6159ba06f0"
+        },
+        "date": 1729432643453,
+        "tool": "julia",
+        "benches": [
+          {
+            "name": "ViT base (256 x 256 x 3 x 32)/forward/CUDA/Reactant (optimize = :after_enzyme)",
+            "value": 1274276450,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21387424\nallocs=459353\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT base (256 x 256 x 3 x 32)/forward/CUDA/Reactant",
+            "value": 1504005786,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21388256\nallocs=459361\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT base (256 x 256 x 3 x 32)/forward/CUDA/Reactant (optimize = :before_enzyme)",
+            "value": 1296415798,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21387840\nallocs=459356\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT base (256 x 256 x 3 x 32)/forward/CUDA/Reactant (optimize = :only_enzyme)",
+            "value": 2632774356,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=58018752\nallocs=1177121\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT base (256 x 256 x 3 x 32)/forward/CUDA/Lux",
+            "value": 214281044,
+            "unit": "ns",
+            "extra": "gctime=54074276\nmemory=4764536\nallocs=97131\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT base (256 x 256 x 3 x 32)/forward/CPU/Reactant (optimize = :after_enzyme)",
+            "value": 5197370835,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21232560\nallocs=453976\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT base (256 x 256 x 3 x 32)/forward/CPU/Reactant",
+            "value": 5027095387,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21233392\nallocs=453984\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT base (256 x 256 x 3 x 32)/forward/CPU/Reactant (optimize = :before_enzyme)",
+            "value": 5176808866,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21232976\nallocs=453979\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT base (256 x 256 x 3 x 32)/forward/CPU/Reactant (optimize = :only_enzyme)",
+            "value": 6950705117,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=57653840\nallocs=1164435\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT base (256 x 256 x 3 x 32)/forward/CPU/Lux",
+            "value": 30210114778,
+            "unit": "ns",
+            "extra": "gctime=1043067024\nmemory=9667617328\nallocs=17425\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT small (256 x 256 x 3 x 4)/forward/CUDA/Reactant (optimize = :after_enzyme)",
+            "value": 1333828366,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21389504\nallocs=459367\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT small (256 x 256 x 3 x 4)/forward/CUDA/Reactant",
+            "value": 1333906062.5,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21388256\nallocs=459355\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT small (256 x 256 x 3 x 4)/forward/CUDA/Reactant (optimize = :before_enzyme)",
+            "value": 1239537365,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21387200\nallocs=459348\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT small (256 x 256 x 3 x 4)/forward/CUDA/Reactant (optimize = :only_enzyme)",
+            "value": 2535006711,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=58019888\nallocs=1177122\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT small (256 x 256 x 3 x 4)/forward/CUDA/Lux",
+            "value": 8092523,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=409216\nallocs=18465\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT small (256 x 256 x 3 x 4)/forward/CPU/Reactant (optimize = :after_enzyme)",
+            "value": 1607185452,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21234992\nallocs=453992\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT small (256 x 256 x 3 x 4)/forward/CPU/Reactant",
+            "value": 1562257423,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21232864\nallocs=453975\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT small (256 x 256 x 3 x 4)/forward/CPU/Reactant (optimize = :before_enzyme)",
+            "value": 1534618953,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21236048\nallocs=453992\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT small (256 x 256 x 3 x 4)/forward/CPU/Reactant (optimize = :only_enzyme)",
+            "value": 2761017373,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=57653584\nallocs=1164431\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT small (256 x 256 x 3 x 4)/forward/CPU/Lux",
+            "value": 2905835720,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=745483024\nallocs=4778\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT tiny (256 x 256 x 3 x 32)/forward/CUDA/Reactant (optimize = :after_enzyme)",
+            "value": 1363845740.5,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21387232\nallocs=459348\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT tiny (256 x 256 x 3 x 32)/forward/CUDA/Reactant",
+            "value": 1281549717,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21387312\nallocs=459348\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT tiny (256 x 256 x 3 x 32)/forward/CUDA/Reactant (optimize = :before_enzyme)",
+            "value": 1268306377,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21388784\nallocs=459352\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT tiny (256 x 256 x 3 x 32)/forward/CUDA/Reactant (optimize = :only_enzyme)",
+            "value": 2621700191,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=58025344\nallocs=1177135\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT tiny (256 x 256 x 3 x 32)/forward/CUDA/Lux",
+            "value": 21004337,
+            "unit": "ns",
+            "extra": "gctime=4464293\nmemory=409360\nallocs=18474\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT tiny (256 x 256 x 3 x 32)/forward/CPU/Reactant (optimize = :after_enzyme)",
+            "value": 2131709948,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21233568\nallocs=453976\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT tiny (256 x 256 x 3 x 32)/forward/CPU/Reactant",
+            "value": 2147266447,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21237200\nallocs=453990\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT tiny (256 x 256 x 3 x 32)/forward/CPU/Reactant (optimize = :before_enzyme)",
+            "value": 2155333992,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21232448\nallocs=453971\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT tiny (256 x 256 x 3 x 32)/forward/CPU/Reactant (optimize = :only_enzyme)",
+            "value": 3362893219,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=57654704\nallocs=1164432\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT tiny (256 x 256 x 3 x 32)/forward/CPU/Lux",
+            "value": 5694285421,
+            "unit": "ns",
+            "extra": "gctime=53063733\nmemory=2531917392\nallocs=13583\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT tiny (256 x 256 x 3 x 4)/forward/CUDA/Reactant (optimize = :after_enzyme)",
+            "value": 1270256555.5,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21386944\nallocs=459347\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT tiny (256 x 256 x 3 x 4)/forward/CUDA/Reactant",
+            "value": 1321224683.5,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21386944\nallocs=459347\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT tiny (256 x 256 x 3 x 4)/forward/CUDA/Reactant (optimize = :before_enzyme)",
+            "value": 1312035911,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21387488\nallocs=459348\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT tiny (256 x 256 x 3 x 4)/forward/CUDA/Reactant (optimize = :only_enzyme)",
+            "value": 2439218123,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=58020704\nallocs=1177120\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT tiny (256 x 256 x 3 x 4)/forward/CUDA/Lux",
+            "value": 6645888,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=409216\nallocs=18465\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT tiny (256 x 256 x 3 x 4)/forward/CPU/Reactant (optimize = :after_enzyme)",
+            "value": 1411078866,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21235168\nallocs=453979\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT tiny (256 x 256 x 3 x 4)/forward/CPU/Reactant",
+            "value": 1420553343,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21233920\nallocs=453975\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT tiny (256 x 256 x 3 x 4)/forward/CPU/Reactant (optimize = :before_enzyme)",
+            "value": 1407608747,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21232080\nallocs=453970\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT tiny (256 x 256 x 3 x 4)/forward/CPU/Reactant (optimize = :only_enzyme)",
+            "value": 2629935417,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=57653072\nallocs=1164429\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT tiny (256 x 256 x 3 x 4)/forward/CPU/Lux",
+            "value": 1389027070,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=448000432\nallocs=3338\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT tiny (256 x 256 x 3 x 16)/forward/CUDA/Reactant (optimize = :after_enzyme)",
+            "value": 1296527080,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21391840\nallocs=459355\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT tiny (256 x 256 x 3 x 16)/forward/CUDA/Reactant",
+            "value": 1241497053.5,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21386944\nallocs=459347\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT tiny (256 x 256 x 3 x 16)/forward/CUDA/Reactant (optimize = :before_enzyme)",
+            "value": 1281149847.5,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21386944\nallocs=459347\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT tiny (256 x 256 x 3 x 16)/forward/CUDA/Reactant (optimize = :only_enzyme)",
+            "value": 2601046008,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=58018752\nallocs=1177121\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT tiny (256 x 256 x 3 x 16)/forward/CUDA/Lux",
+            "value": 11290966,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=409232\nallocs=18466\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT tiny (256 x 256 x 3 x 16)/forward/CPU/Reactant (optimize = :after_enzyme)",
+            "value": 1697072941,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21232624\nallocs=453971\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT tiny (256 x 256 x 3 x 16)/forward/CPU/Reactant",
+            "value": 1700727950,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21233168\nallocs=453972\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT tiny (256 x 256 x 3 x 16)/forward/CPU/Reactant (optimize = :before_enzyme)",
+            "value": 1709925205,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21235888\nallocs=453977\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT tiny (256 x 256 x 3 x 16)/forward/CPU/Reactant (optimize = :only_enzyme)",
+            "value": 2932097816,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=57657648\nallocs=1164441\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT tiny (256 x 256 x 3 x 16)/forward/CPU/Lux",
+            "value": 3098112693,
+            "unit": "ns",
+            "extra": "gctime=14606835\nmemory=1341126672\nallocs=7743\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT small (256 x 256 x 3 x 16)/forward/CUDA/Reactant (optimize = :after_enzyme)",
+            "value": 1311917409,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21388656\nallocs=459350\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT small (256 x 256 x 3 x 16)/forward/CUDA/Reactant",
+            "value": 1268077992,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21386944\nallocs=459347\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT small (256 x 256 x 3 x 16)/forward/CUDA/Reactant (optimize = :before_enzyme)",
+            "value": 1262813913.5,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21387568\nallocs=459348\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT small (256 x 256 x 3 x 16)/forward/CUDA/Reactant (optimize = :only_enzyme)",
+            "value": 2431182504,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=58017984\nallocs=1177115\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT small (256 x 256 x 3 x 16)/forward/CUDA/Lux",
+            "value": 25553294,
+            "unit": "ns",
+            "extra": "gctime=4476807\nmemory=409232\nallocs=18466\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT small (256 x 256 x 3 x 16)/forward/CPU/Reactant (optimize = :after_enzyme)",
+            "value": 2174358108,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21232080\nallocs=453970\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT small (256 x 256 x 3 x 16)/forward/CPU/Reactant",
+            "value": 2130506129,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21232080\nallocs=453970\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT small (256 x 256 x 3 x 16)/forward/CPU/Reactant (optimize = :before_enzyme)",
+            "value": 2141890301,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21232704\nallocs=453971\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT small (256 x 256 x 3 x 16)/forward/CPU/Reactant (optimize = :only_enzyme)",
+            "value": 3358187705,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=57653072\nallocs=1164429\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT small (256 x 256 x 3 x 16)/forward/CPU/Lux",
+            "value": 5926822201,
+            "unit": "ns",
+            "extra": "gctime=47054969\nmemory=2531049840\nallocs=13503\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT small (256 x 256 x 3 x 32)/forward/CUDA/Reactant (optimize = :after_enzyme)",
+            "value": 1246420328,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21390688\nallocs=459353\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT small (256 x 256 x 3 x 32)/forward/CUDA/Reactant",
+            "value": 1230888787,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21399424\nallocs=459367\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT small (256 x 256 x 3 x 32)/forward/CUDA/Reactant (optimize = :before_enzyme)",
+            "value": 1239891648,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21386944\nallocs=459347\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT small (256 x 256 x 3 x 32)/forward/CUDA/Reactant (optimize = :only_enzyme)",
+            "value": 2591215267,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=58019856\nallocs=1177122\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT small (256 x 256 x 3 x 32)/forward/CUDA/Lux",
+            "value": 50189186.5,
+            "unit": "ns",
+            "extra": "gctime=8441715\nmemory=409568\nallocs=18479\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT small (256 x 256 x 3 x 32)/forward/CPU/Reactant (optimize = :after_enzyme)",
+            "value": 2946966876,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21232080\nallocs=453970\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT small (256 x 256 x 3 x 32)/forward/CPU/Reactant",
+            "value": 2923840841,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21232080\nallocs=453970\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT small (256 x 256 x 3 x 32)/forward/CPU/Reactant (optimize = :before_enzyme)",
+            "value": 2964932211,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21232080\nallocs=453970\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT small (256 x 256 x 3 x 32)/forward/CPU/Reactant (optimize = :only_enzyme)",
+            "value": 4335811972,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=57654752\nallocs=1164436\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT small (256 x 256 x 3 x 32)/forward/CPU/Lux",
+            "value": 9390568826,
+            "unit": "ns",
+            "extra": "gctime=295719449\nmemory=4910324400\nallocs=13583\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT base (256 x 256 x 3 x 16)/forward/CUDA/Reactant (optimize = :after_enzyme)",
+            "value": 1294698397,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21387760\nallocs=459348\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT base (256 x 256 x 3 x 16)/forward/CUDA/Reactant",
+            "value": 1292741925,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21391024\nallocs=459352\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT base (256 x 256 x 3 x 16)/forward/CUDA/Reactant (optimize = :before_enzyme)",
+            "value": 1286971007,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21392656\nallocs=459354\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT base (256 x 256 x 3 x 16)/forward/CUDA/Reactant (optimize = :only_enzyme)",
+            "value": 2622960665,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=58017984\nallocs=1177115\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT base (256 x 256 x 3 x 16)/forward/CUDA/Lux",
+            "value": 67952218,
+            "unit": "ns",
+            "extra": "gctime=13284584\nmemory=410384\nallocs=18530\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT base (256 x 256 x 3 x 16)/forward/CPU/Reactant (optimize = :after_enzyme)",
+            "value": 3179640040,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21233328\nallocs=453972\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT base (256 x 256 x 3 x 16)/forward/CPU/Reactant",
+            "value": 3134846816,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21233952\nallocs=453973\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT base (256 x 256 x 3 x 16)/forward/CPU/Reactant (optimize = :before_enzyme)",
+            "value": 3190123740,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21244720\nallocs=453991\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT base (256 x 256 x 3 x 16)/forward/CPU/Reactant (optimize = :only_enzyme)",
+            "value": 4549007086,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=57653072\nallocs=1164429\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT base (256 x 256 x 3 x 16)/forward/CPU/Lux",
+            "value": 10730073817,
+            "unit": "ns",
+            "extra": "gctime=310834221\nmemory=4909458160\nallocs=13505\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT base (256 x 256 x 3 x 4)/forward/CUDA/Reactant (optimize = :after_enzyme)",
+            "value": 1372003352,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21386944\nallocs=459347\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT base (256 x 256 x 3 x 4)/forward/CUDA/Reactant",
+            "value": 1260012887.5,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21386944\nallocs=459347\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT base (256 x 256 x 3 x 4)/forward/CUDA/Reactant (optimize = :before_enzyme)",
+            "value": 1301880504.5,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21387840\nallocs=459348\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT base (256 x 256 x 3 x 4)/forward/CUDA/Reactant (optimize = :only_enzyme)",
+            "value": 2625433428,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=58017984\nallocs=1177115\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT base (256 x 256 x 3 x 4)/forward/CUDA/Lux",
+            "value": 19586990,
+            "unit": "ns",
+            "extra": "gctime=4615672\nmemory=410048\nallocs=18517\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT base (256 x 256 x 3 x 4)/forward/CPU/Reactant (optimize = :after_enzyme)",
+            "value": 2026533529,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21232080\nallocs=453970\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT base (256 x 256 x 3 x 4)/forward/CPU/Reactant",
+            "value": 2108060685,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21232896\nallocs=453971\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT base (256 x 256 x 3 x 4)/forward/CPU/Reactant (optimize = :before_enzyme)",
+            "value": 1822722862,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=21234608\nallocs=453973\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT base (256 x 256 x 3 x 4)/forward/CPU/Reactant (optimize = :only_enzyme)",
+            "value": 3048107128,
+            "unit": "ns",
+            "extra": "gctime=0\nmemory=57655520\nallocs=1164432\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
+          },
+          {
+            "name": "ViT base (256 x 256 x 3 x 4)/forward/CPU/Lux",
+            "value": 3199625258,
+            "unit": "ns",
+            "extra": "gctime=7719982.5\nmemory=1340481296\nallocs=7684\nparams={\"gctrial\":true,\"time_tolerance\":0.05,\"evals_set\":false,\"samples\":10000,\"evals\":1,\"gcsample\":false,\"seconds\":20,\"overhead\":0,\"memory_tolerance\":0.01}"
           }
         ]
       }
