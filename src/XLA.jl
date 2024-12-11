@@ -9,6 +9,7 @@ mutable struct Client
         @assert client != C_NULL
         client = new(client)
         finalizer(client) do client
+            @info "free client $client"
             @ccall MLIR.API.mlir_c.FreeClient(client.client::Ptr{Cvoid})::Cvoid
         end
         return client
