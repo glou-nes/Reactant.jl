@@ -30,7 +30,7 @@ function assume_alignment(memref::Value; alignment, location=Location())
     successors = Block[]
     attributes = NamedAttribute[namedattribute("alignment", alignment),]
 
-    return create_operation(
+    create_operation(
         "memref.assume_alignment",
         location;
         operands,
@@ -74,7 +74,7 @@ function atomic_rmw(
     attributes = NamedAttribute[namedattribute("kind", kind),]
     !isnothing(result) && push!(op_ty_results, result)
 
-    return create_operation(
+    create_operation(
         "memref.atomic_rmw",
         location;
         operands,
@@ -99,7 +99,7 @@ function atomic_yield(result::Value; location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "memref.atomic_yield",
         location;
         operands,
@@ -132,7 +132,7 @@ function copy(source::Value, target::Value; location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "memref.copy",
         location;
         operands,
@@ -181,7 +181,7 @@ function generic_atomic_rmw(
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "memref.generic_atomic_rmw",
         location;
         operands,
@@ -246,7 +246,7 @@ function load(
     !isnothing(result) && push!(op_ty_results, result)
     !isnothing(nontemporal) && push!(attributes, namedattribute("nontemporal", nontemporal))
 
-    return create_operation(
+    create_operation(
         "memref.load",
         location;
         operands,
@@ -314,7 +314,7 @@ function alloc(
     push!(attributes, operandsegmentsizes([length(dynamicSizes), length(symbolOperands)]))
     !isnothing(alignment) && push!(attributes, namedattribute("alignment", alignment))
 
-    return create_operation(
+    create_operation(
         "memref.alloc",
         location;
         operands,
@@ -378,7 +378,7 @@ function alloca(
     push!(attributes, operandsegmentsizes([length(dynamicSizes), length(symbolOperands)]))
     !isnothing(alignment) && push!(attributes, namedattribute("alignment", alignment))
 
-    return create_operation(
+    create_operation(
         "memref.alloca",
         location;
         operands,
@@ -431,7 +431,7 @@ function alloca_scope(; results::Vector{IR.Type}, bodyRegion::Region, location=L
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "memref.alloca_scope",
         location;
         operands,
@@ -462,7 +462,7 @@ function alloca_scope_return(results::Vector{Value}; location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "memref.alloca_scope.return",
         location;
         operands,
@@ -531,7 +531,7 @@ function cast(source::Value; dest::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "memref.cast",
         location;
         operands,
@@ -593,7 +593,7 @@ function collapse_shape(src::Value; result::IR.Type, reassociation, location=Loc
     successors = Block[]
     attributes = NamedAttribute[namedattribute("reassociation", reassociation),]
 
-    return create_operation(
+    create_operation(
         "memref.collapse_shape",
         location;
         operands,
@@ -627,7 +627,7 @@ function dealloc(memref::Value; location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "memref.dealloc",
         location;
         operands,
@@ -674,7 +674,7 @@ function dim(
     attributes = NamedAttribute[]
     !isnothing(result) && push!(op_ty_results, result)
 
-    return create_operation(
+    create_operation(
         "memref.dim",
         location;
         operands,
@@ -749,7 +749,7 @@ function dma_start(operands::Vector{Value}; location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "memref.dma_start",
         location;
         operands,
@@ -790,7 +790,7 @@ function dma_wait(
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "memref.dma_wait",
         location;
         operands,
@@ -864,7 +864,7 @@ function expand_shape(
         namedattribute("static_output_shape", static_output_shape),
     ]
 
-    return create_operation(
+    create_operation(
         "memref.expand_shape",
         location;
         operands,
@@ -908,7 +908,7 @@ function extract_aligned_pointer_as_index(
     attributes = NamedAttribute[]
     !isnothing(aligned_pointer) && push!(op_ty_results, aligned_pointer)
 
-    return create_operation(
+    create_operation(
         "memref.extract_aligned_pointer_as_index",
         location;
         operands,
@@ -982,7 +982,7 @@ function extract_strided_metadata(
     !isnothing(sizes) && push!(op_ty_results, sizes...)
     !isnothing(strides) && push!(op_ty_results, strides...)
 
-    return create_operation(
+    create_operation(
         "memref.extract_strided_metadata",
         location;
         operands,
@@ -1015,7 +1015,7 @@ function get_global(; result::IR.Type, name, location=Location())
     successors = Block[]
     attributes = NamedAttribute[namedattribute("name", name),]
 
-    return create_operation(
+    create_operation(
         "memref.get_global",
         location;
         operands,
@@ -1088,7 +1088,7 @@ function global_(;
     !isnothing(constant) && push!(attributes, namedattribute("constant", constant))
     !isnothing(alignment) && push!(attributes, namedattribute("alignment", alignment))
 
-    return create_operation(
+    create_operation(
         "memref.global",
         location;
         operands,
@@ -1132,7 +1132,7 @@ function memory_space_cast(source::Value; dest::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "memref.memory_space_cast",
         location;
         operands,
@@ -1180,7 +1180,7 @@ function prefetch(
         namedattribute("isDataCache", isDataCache),
     ]
 
-    return create_operation(
+    create_operation(
         "memref.prefetch",
         location;
         operands,
@@ -1212,7 +1212,7 @@ function rank(memref::Value; result_0=nothing::Union{Nothing,IR.Type}, location=
     attributes = NamedAttribute[]
     !isnothing(result_0) && push!(op_ty_results, result_0)
 
-    return create_operation(
+    create_operation(
         "memref.rank",
         location;
         operands,
@@ -1297,7 +1297,7 @@ function realloc(
     !isnothing(dynamicResultSize) && push!(operands, dynamicResultSize)
     !isnothing(alignment) && push!(attributes, namedattribute("alignment", alignment))
 
-    return create_operation(
+    create_operation(
         "memref.realloc",
         location;
         operands,
@@ -1372,7 +1372,7 @@ function reinterpret_cast(
         operandsegmentsizes([1, length(offsets), length(sizes), length(strides)]),
     )
 
-    return create_operation(
+    create_operation(
         "memref.reinterpret_cast",
         location;
         operands,
@@ -1426,7 +1426,7 @@ function reshape(source::Value, shape::Value; result::IR.Type, location=Location
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "memref.reshape",
         location;
         operands,
@@ -1482,7 +1482,7 @@ function store(
     attributes = NamedAttribute[]
     !isnothing(nontemporal) && push!(attributes, namedattribute("nontemporal", nontemporal))
 
-    return create_operation(
+    create_operation(
         "memref.store",
         location;
         operands,
@@ -1514,7 +1514,7 @@ function transpose(in::Value; result_0::IR.Type, permutation, location=Location(
     successors = Block[]
     attributes = NamedAttribute[namedattribute("permutation", permutation),]
 
-    return create_operation(
+    create_operation(
         "memref.transpose",
         location;
         operands,
@@ -1577,7 +1577,7 @@ function view(
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "memref.view",
         location;
         operands,
@@ -1747,7 +1747,7 @@ function subview(
         operandsegmentsizes([1, length(offsets), length(sizes), length(strides)]),
     )
 
-    return create_operation(
+    create_operation(
         "memref.subview",
         location;
         operands,

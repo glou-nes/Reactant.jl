@@ -20,7 +20,7 @@ function barrier0(; location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.barrier0",
         location;
         operands,
@@ -53,7 +53,7 @@ function barrier_arrive(
     attributes = NamedAttribute[]
     !isnothing(barrierId) && push!(operands, barrierId)
 
-    return create_operation(
+    create_operation(
         "nvvm.barrier.arrive",
         location;
         operands,
@@ -78,16 +78,16 @@ function barrier(
     !isnothing(barrierId) && push!(operands, barrierId)
     !isnothing(numberOfThreads) && push!(operands, numberOfThreads)
     push!(attributes, operandsegmentsizes([
-        if (barrierId == nothing)
+        if (barrierId==nothing)
             0
-        elseif 1(numberOfThreads == nothing)
+        elseif 1(numberOfThreads==nothing)
             0
         else
             1
         end,
     ]))
 
-    return create_operation(
+    create_operation(
         "nvvm.barrier",
         location;
         operands,
@@ -107,7 +107,7 @@ function read_ptx_sreg_ntid_x(; res::IR.Type, range=nothing, location=Location()
     attributes = NamedAttribute[]
     !isnothing(range) && push!(attributes, namedattribute("range", range))
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.ntid.x",
         location;
         operands,
@@ -127,7 +127,7 @@ function read_ptx_sreg_ntid_y(; res::IR.Type, range=nothing, location=Location()
     attributes = NamedAttribute[]
     !isnothing(range) && push!(attributes, namedattribute("range", range))
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.ntid.y",
         location;
         operands,
@@ -147,7 +147,7 @@ function read_ptx_sreg_ntid_z(; res::IR.Type, range=nothing, location=Location()
     attributes = NamedAttribute[]
     !isnothing(range) && push!(attributes, namedattribute("range", range))
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.ntid.z",
         location;
         operands,
@@ -167,7 +167,7 @@ function read_ptx_sreg_ctaid_x(; res::IR.Type, range=nothing, location=Location(
     attributes = NamedAttribute[]
     !isnothing(range) && push!(attributes, namedattribute("range", range))
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.ctaid.x",
         location;
         operands,
@@ -187,7 +187,7 @@ function read_ptx_sreg_ctaid_y(; res::IR.Type, range=nothing, location=Location(
     attributes = NamedAttribute[]
     !isnothing(range) && push!(attributes, namedattribute("range", range))
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.ctaid.y",
         location;
         operands,
@@ -207,7 +207,7 @@ function read_ptx_sreg_ctaid_z(; res::IR.Type, range=nothing, location=Location(
     attributes = NamedAttribute[]
     !isnothing(range) && push!(attributes, namedattribute("range", range))
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.ctaid.z",
         location;
         operands,
@@ -227,7 +227,7 @@ function read_ptx_sreg_cluster_ctaid_x(; res::IR.Type, range=nothing, location=L
     attributes = NamedAttribute[]
     !isnothing(range) && push!(attributes, namedattribute("range", range))
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.cluster.ctaid.x",
         location;
         operands,
@@ -247,7 +247,7 @@ function read_ptx_sreg_cluster_ctaid_y(; res::IR.Type, range=nothing, location=L
     attributes = NamedAttribute[]
     !isnothing(range) && push!(attributes, namedattribute("range", range))
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.cluster.ctaid.y",
         location;
         operands,
@@ -267,7 +267,7 @@ function read_ptx_sreg_cluster_ctaid_z(; res::IR.Type, range=nothing, location=L
     attributes = NamedAttribute[]
     !isnothing(range) && push!(attributes, namedattribute("range", range))
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.cluster.ctaid.z",
         location;
         operands,
@@ -292,7 +292,7 @@ function breakpoint(; location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.breakpoint",
         location;
         operands,
@@ -311,7 +311,7 @@ function read_ptx_sreg_clock64(; res::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.clock64",
         location;
         operands,
@@ -330,7 +330,7 @@ function read_ptx_sreg_clock(; res::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.clock",
         location;
         operands,
@@ -361,7 +361,7 @@ function cluster_arrive(; aligned=nothing, location=Location())
     attributes = NamedAttribute[]
     !isnothing(aligned) && push!(attributes, namedattribute("aligned", aligned))
 
-    return create_operation(
+    create_operation(
         "nvvm.cluster.arrive",
         location;
         operands,
@@ -395,7 +395,7 @@ function cluster_arrive_relaxed(; aligned=nothing, location=Location())
     attributes = NamedAttribute[]
     !isnothing(aligned) && push!(attributes, namedattribute("aligned", aligned))
 
-    return create_operation(
+    create_operation(
         "nvvm.cluster.arrive.relaxed",
         location;
         operands,
@@ -415,7 +415,7 @@ function read_ptx_sreg_cluster_nctarank(; res::IR.Type, range=nothing, location=
     attributes = NamedAttribute[]
     !isnothing(range) && push!(attributes, namedattribute("range", range))
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.cluster.nctarank",
         location;
         operands,
@@ -435,7 +435,7 @@ function read_ptx_sreg_cluster_nctaid_x(; res::IR.Type, range=nothing, location=
     attributes = NamedAttribute[]
     !isnothing(range) && push!(attributes, namedattribute("range", range))
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.cluster.nctaid.x",
         location;
         operands,
@@ -455,7 +455,7 @@ function read_ptx_sreg_cluster_nctaid_y(; res::IR.Type, range=nothing, location=
     attributes = NamedAttribute[]
     !isnothing(range) && push!(attributes, namedattribute("range", range))
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.cluster.nctaid.y",
         location;
         operands,
@@ -475,7 +475,7 @@ function read_ptx_sreg_cluster_nctaid_z(; res::IR.Type, range=nothing, location=
     attributes = NamedAttribute[]
     !isnothing(range) && push!(attributes, namedattribute("range", range))
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.cluster.nctaid.z",
         location;
         operands,
@@ -495,7 +495,7 @@ function read_ptx_sreg_nclusterid_x(; res::IR.Type, range=nothing, location=Loca
     attributes = NamedAttribute[]
     !isnothing(range) && push!(attributes, namedattribute("range", range))
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.nclusterid.x",
         location;
         operands,
@@ -515,7 +515,7 @@ function read_ptx_sreg_nclusterid_y(; res::IR.Type, range=nothing, location=Loca
     attributes = NamedAttribute[]
     !isnothing(range) && push!(attributes, namedattribute("range", range))
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.nclusterid.y",
         location;
         operands,
@@ -535,7 +535,7 @@ function read_ptx_sreg_nclusterid_z(; res::IR.Type, range=nothing, location=Loca
     attributes = NamedAttribute[]
     !isnothing(range) && push!(attributes, namedattribute("range", range))
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.nclusterid.z",
         location;
         operands,
@@ -555,7 +555,7 @@ function read_ptx_sreg_cluster_ctarank(; res::IR.Type, range=nothing, location=L
     attributes = NamedAttribute[]
     !isnothing(range) && push!(attributes, namedattribute("range", range))
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.cluster.ctarank",
         location;
         operands,
@@ -575,7 +575,7 @@ function read_ptx_sreg_clusterid_x(; res::IR.Type, range=nothing, location=Locat
     attributes = NamedAttribute[]
     !isnothing(range) && push!(attributes, namedattribute("range", range))
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.clusterid.x",
         location;
         operands,
@@ -595,7 +595,7 @@ function read_ptx_sreg_clusterid_y(; res::IR.Type, range=nothing, location=Locat
     attributes = NamedAttribute[]
     !isnothing(range) && push!(attributes, namedattribute("range", range))
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.clusterid.y",
         location;
         operands,
@@ -615,7 +615,7 @@ function read_ptx_sreg_clusterid_z(; res::IR.Type, range=nothing, location=Locat
     attributes = NamedAttribute[]
     !isnothing(range) && push!(attributes, namedattribute("range", range))
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.clusterid.z",
         location;
         operands,
@@ -644,7 +644,7 @@ function cluster_wait(; aligned=nothing, location=Location())
     attributes = NamedAttribute[]
     !isnothing(aligned) && push!(attributes, namedattribute("aligned", aligned))
 
-    return create_operation(
+    create_operation(
         "nvvm.cluster.wait",
         location;
         operands,
@@ -671,7 +671,7 @@ function cp_async_bulk_commit_group(; location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.cp.async.bulk.commit.group",
         location;
         operands,
@@ -721,16 +721,16 @@ function cp_async_bulk_shared_cluster_global(
         1,
         1,
         1,
-        if (multicastMask == nothing)
+        if (multicastMask==nothing)
             0
-        elseif 1(l2CacheHint == nothing)
+        elseif 1(l2CacheHint==nothing)
             0
         else
             1
         end,
     ]))
 
-    return create_operation(
+    create_operation(
         "nvvm.cp.async.bulk.shared.cluster.global",
         location;
         operands,
@@ -767,7 +767,7 @@ function cp_async_bulk_global_shared_cta(
     attributes = NamedAttribute[]
     !isnothing(l2CacheHint) && push!(operands, l2CacheHint)
 
-    return create_operation(
+    create_operation(
         "nvvm.cp.async.bulk.global.shared.cta",
         location;
         operands,
@@ -796,7 +796,7 @@ function cp_async_bulk_shared_cluster_shared_cta(
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.cp.async.bulk.shared.cluster.shared.cta",
         location;
         operands,
@@ -861,11 +861,11 @@ function cp_async_bulk_tensor_shared_cluster_global(
             length(coordinates),
             1,
             length(im2colOffsets),
-            if (multicastMask == nothing)
+            if (multicastMask==nothing)
                 0
-            elseif 1(l2CacheHint == nothing)
+            elseif 1(l2CacheHint==nothing)
                 0
-            elseif 1(predicate == nothing)
+            elseif 1(predicate==nothing)
                 0
             else
                 1
@@ -873,7 +873,7 @@ function cp_async_bulk_tensor_shared_cluster_global(
         ]),
     )
 
-    return create_operation(
+    create_operation(
         "nvvm.cp.async.bulk.tensor.shared.cluster.global",
         location;
         operands,
@@ -921,11 +921,11 @@ function cp_async_bulk_tensor_prefetch(
     push!(
         attributes,
         operandsegmentsizes([
-            1, length(coordinates), length(im2colOffsets), (l2CacheHint == nothing) ? 0 : 1
+            1, length(coordinates), length(im2colOffsets), (l2CacheHint==nothing) ? 0 : 1
         ]),
     )
 
-    return create_operation(
+    create_operation(
         "nvvm.cp.async.bulk.tensor.prefetch",
         location;
         operands,
@@ -970,11 +970,11 @@ function cp_async_bulk_tensor_reduce(
     !isnothing(l2CacheHint) && push!(operands, l2CacheHint)
     push!(
         attributes,
-        operandsegmentsizes([1, 1, length(coordinates), (l2CacheHint == nothing) ? 0 : 1]),
+        operandsegmentsizes([1, 1, length(coordinates), (l2CacheHint==nothing) ? 0 : 1]),
     )
     !isnothing(mode) && push!(attributes, namedattribute("mode", mode))
 
-    return create_operation(
+    create_operation(
         "nvvm.cp.async.bulk.tensor.reduce",
         location;
         operands,
@@ -1001,10 +1001,10 @@ function cp_async_bulk_tensor_global_shared_cta(
     !isnothing(predicate) && push!(operands, predicate)
     push!(
         attributes,
-        operandsegmentsizes([1, 1, length(coordinates), (predicate == nothing) ? 0 : 1]),
+        operandsegmentsizes([1, 1, length(coordinates), (predicate==nothing) ? 0 : 1]),
     )
 
-    return create_operation(
+    create_operation(
         "nvvm.cp.async.bulk.tensor.global.shared.cta",
         location;
         operands,
@@ -1039,7 +1039,7 @@ function cp_async_bulk_wait_group(; group, read=nothing, location=Location())
     attributes = NamedAttribute[namedattribute("group", group),]
     !isnothing(read) && push!(attributes, namedattribute("read", read))
 
-    return create_operation(
+    create_operation(
         "nvvm.cp.async.bulk.wait_group",
         location;
         operands,
@@ -1058,7 +1058,7 @@ function cp_async_commit_group(; location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.cp.async.commit.group",
         location;
         operands,
@@ -1089,7 +1089,7 @@ function cp_async_mbarrier_arrive(addr::Value; noinc=nothing, location=Location(
     attributes = NamedAttribute[]
     !isnothing(noinc) && push!(attributes, namedattribute("noinc", noinc))
 
-    return create_operation(
+    create_operation(
         "nvvm.cp.async.mbarrier.arrive",
         location;
         operands,
@@ -1120,7 +1120,7 @@ function cp_async_mbarrier_arrive_shared(addr::Value; noinc=nothing, location=Lo
     attributes = NamedAttribute[]
     !isnothing(noinc) && push!(attributes, namedattribute("noinc", noinc))
 
-    return create_operation(
+    create_operation(
         "nvvm.cp.async.mbarrier.arrive.shared",
         location;
         operands,
@@ -1149,7 +1149,7 @@ function cp_async_shared_global(
     ]
     !isnothing(cpSize) && push!(operands, cpSize)
 
-    return create_operation(
+    create_operation(
         "nvvm.cp.async.shared.global",
         location;
         operands,
@@ -1168,7 +1168,7 @@ function cp_async_wait_group(; n, location=Location())
     successors = Block[]
     attributes = NamedAttribute[namedattribute("n", n),]
 
-    return create_operation(
+    create_operation(
         "nvvm.cp.async.wait.group",
         location;
         operands,
@@ -1203,7 +1203,7 @@ function cvt_float_to_tf32(
     !isnothing(sat) && push!(attributes, namedattribute("sat", sat))
     !isnothing(relu) && push!(attributes, namedattribute("relu", relu))
 
-    return create_operation(
+    create_operation(
         "nvvm.cvt.float.to.tf32",
         location;
         operands,
@@ -1233,7 +1233,7 @@ function elect_sync(; pred::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.elect.sync",
         location;
         operands,
@@ -1252,7 +1252,7 @@ function read_ptx_sreg_envreg0(; res::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.envreg0",
         location;
         operands,
@@ -1271,7 +1271,7 @@ function read_ptx_sreg_envreg1(; res::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.envreg1",
         location;
         operands,
@@ -1290,7 +1290,7 @@ function read_ptx_sreg_envreg2(; res::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.envreg2",
         location;
         operands,
@@ -1309,7 +1309,7 @@ function read_ptx_sreg_envreg3(; res::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.envreg3",
         location;
         operands,
@@ -1328,7 +1328,7 @@ function read_ptx_sreg_envreg4(; res::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.envreg4",
         location;
         operands,
@@ -1347,7 +1347,7 @@ function read_ptx_sreg_envreg5(; res::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.envreg5",
         location;
         operands,
@@ -1366,7 +1366,7 @@ function read_ptx_sreg_envreg6(; res::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.envreg6",
         location;
         operands,
@@ -1385,7 +1385,7 @@ function read_ptx_sreg_envreg7(; res::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.envreg7",
         location;
         operands,
@@ -1404,7 +1404,7 @@ function read_ptx_sreg_envreg8(; res::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.envreg8",
         location;
         operands,
@@ -1423,7 +1423,7 @@ function read_ptx_sreg_envreg9(; res::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.envreg9",
         location;
         operands,
@@ -1442,7 +1442,7 @@ function read_ptx_sreg_envreg10(; res::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.envreg10",
         location;
         operands,
@@ -1461,7 +1461,7 @@ function read_ptx_sreg_envreg11(; res::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.envreg11",
         location;
         operands,
@@ -1480,7 +1480,7 @@ function read_ptx_sreg_envreg12(; res::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.envreg12",
         location;
         operands,
@@ -1499,7 +1499,7 @@ function read_ptx_sreg_envreg13(; res::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.envreg13",
         location;
         operands,
@@ -1518,7 +1518,7 @@ function read_ptx_sreg_envreg14(; res::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.envreg14",
         location;
         operands,
@@ -1537,7 +1537,7 @@ function read_ptx_sreg_envreg15(; res::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.envreg15",
         location;
         operands,
@@ -1556,7 +1556,7 @@ function read_ptx_sreg_envreg16(; res::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.envreg16",
         location;
         operands,
@@ -1575,7 +1575,7 @@ function read_ptx_sreg_envreg17(; res::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.envreg17",
         location;
         operands,
@@ -1594,7 +1594,7 @@ function read_ptx_sreg_envreg18(; res::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.envreg18",
         location;
         operands,
@@ -1613,7 +1613,7 @@ function read_ptx_sreg_envreg19(; res::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.envreg19",
         location;
         operands,
@@ -1632,7 +1632,7 @@ function read_ptx_sreg_envreg20(; res::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.envreg20",
         location;
         operands,
@@ -1651,7 +1651,7 @@ function read_ptx_sreg_envreg21(; res::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.envreg21",
         location;
         operands,
@@ -1670,7 +1670,7 @@ function read_ptx_sreg_envreg22(; res::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.envreg22",
         location;
         operands,
@@ -1689,7 +1689,7 @@ function read_ptx_sreg_envreg23(; res::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.envreg23",
         location;
         operands,
@@ -1708,7 +1708,7 @@ function read_ptx_sreg_envreg24(; res::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.envreg24",
         location;
         operands,
@@ -1727,7 +1727,7 @@ function read_ptx_sreg_envreg25(; res::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.envreg25",
         location;
         operands,
@@ -1746,7 +1746,7 @@ function read_ptx_sreg_envreg26(; res::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.envreg26",
         location;
         operands,
@@ -1765,7 +1765,7 @@ function read_ptx_sreg_envreg27(; res::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.envreg27",
         location;
         operands,
@@ -1784,7 +1784,7 @@ function read_ptx_sreg_envreg28(; res::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.envreg28",
         location;
         operands,
@@ -1803,7 +1803,7 @@ function read_ptx_sreg_envreg29(; res::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.envreg29",
         location;
         operands,
@@ -1822,7 +1822,7 @@ function read_ptx_sreg_envreg30(; res::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.envreg30",
         location;
         operands,
@@ -1841,7 +1841,7 @@ function read_ptx_sreg_envreg31(; res::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.envreg31",
         location;
         operands,
@@ -1866,7 +1866,7 @@ function exit(; location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.exit",
         location;
         operands,
@@ -1892,7 +1892,7 @@ function fence_mbarrier_init(; location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.fence.mbarrier.init",
         location;
         operands,
@@ -1931,7 +1931,7 @@ function fence_proxy_acquire(
     !isnothing(fromProxy) && push!(attributes, namedattribute("fromProxy", fromProxy))
     !isnothing(toProxy) && push!(attributes, namedattribute("toProxy", toProxy))
 
-    return create_operation(
+    create_operation(
         "nvvm.fence.proxy.acquire",
         location;
         operands,
@@ -1959,7 +1959,7 @@ function fence_proxy(; kind, space=nothing, location=Location())
     attributes = NamedAttribute[namedattribute("kind", kind),]
     !isnothing(space) && push!(attributes, namedattribute("space", space))
 
-    return create_operation(
+    create_operation(
         "nvvm.fence.proxy",
         location;
         operands,
@@ -1993,7 +1993,7 @@ function fence_proxy_release(;
     !isnothing(fromProxy) && push!(attributes, namedattribute("fromProxy", fromProxy))
     !isnothing(toProxy) && push!(attributes, namedattribute("toProxy", toProxy))
 
-    return create_operation(
+    create_operation(
         "nvvm.fence.proxy.release",
         location;
         operands,
@@ -2012,7 +2012,7 @@ function fence_sc_cluster(; location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.fence.sc.cluster",
         location;
         operands,
@@ -2031,7 +2031,7 @@ function read_ptx_sreg_globaltimer(; res::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.globaltimer",
         location;
         operands,
@@ -2051,7 +2051,7 @@ function read_ptx_sreg_nctaid_x(; res::IR.Type, range=nothing, location=Location
     attributes = NamedAttribute[]
     !isnothing(range) && push!(attributes, namedattribute("range", range))
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.nctaid.x",
         location;
         operands,
@@ -2071,7 +2071,7 @@ function read_ptx_sreg_nctaid_y(; res::IR.Type, range=nothing, location=Location
     attributes = NamedAttribute[]
     !isnothing(range) && push!(attributes, namedattribute("range", range))
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.nctaid.y",
         location;
         operands,
@@ -2091,7 +2091,7 @@ function read_ptx_sreg_nctaid_z(; res::IR.Type, range=nothing, location=Location
     attributes = NamedAttribute[]
     !isnothing(range) && push!(attributes, namedattribute("range", range))
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.nctaid.z",
         location;
         operands,
@@ -2111,7 +2111,7 @@ function read_ptx_sreg_gridid(; res::IR.Type, range=nothing, location=Location()
     attributes = NamedAttribute[]
     !isnothing(range) && push!(attributes, namedattribute("range", range))
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.gridid",
         location;
         operands,
@@ -2140,7 +2140,7 @@ function griddepcontrol_launch_dependents(; location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.griddepcontrol.launch.dependents",
         location;
         operands,
@@ -2169,7 +2169,7 @@ function griddepcontrol_wait(; location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.griddepcontrol.wait",
         location;
         operands,
@@ -2189,7 +2189,7 @@ function read_ptx_sreg_laneid(; res::IR.Type, range=nothing, location=Location()
     attributes = NamedAttribute[]
     !isnothing(range) && push!(attributes, namedattribute("range", range))
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.laneid",
         location;
         operands,
@@ -2208,7 +2208,7 @@ function read_ptx_sreg_lanemask_eq(; res::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.lanemask.eq",
         location;
         operands,
@@ -2227,7 +2227,7 @@ function read_ptx_sreg_lanemask_ge(; res::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.lanemask.ge",
         location;
         operands,
@@ -2246,7 +2246,7 @@ function read_ptx_sreg_lanemask_gt(; res::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.lanemask.gt",
         location;
         operands,
@@ -2265,7 +2265,7 @@ function read_ptx_sreg_lanemask_le(; res::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.lanemask.le",
         location;
         operands,
@@ -2284,7 +2284,7 @@ function read_ptx_sreg_lanemask_lt(; res::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.lanemask.lt",
         location;
         operands,
@@ -2305,7 +2305,7 @@ function ldmatrix(ptr::Value; res::IR.Type, num, layout, location=Location())
         namedattribute("num", num), namedattribute("layout", layout)
     ]
 
-    return create_operation(
+    create_operation(
         "nvvm.ldmatrix",
         location;
         operands,
@@ -2330,7 +2330,7 @@ function mbarrier_arrive_expect_tx(
     attributes = NamedAttribute[]
     !isnothing(predicate) && push!(operands, predicate)
 
-    return create_operation(
+    create_operation(
         "nvvm.mbarrier.arrive.expect_tx",
         location;
         operands,
@@ -2355,7 +2355,7 @@ function mbarrier_arrive_expect_tx_shared(
     attributes = NamedAttribute[]
     !isnothing(predicate) && push!(operands, predicate)
 
-    return create_operation(
+    create_operation(
         "nvvm.mbarrier.arrive.expect_tx.shared",
         location;
         operands,
@@ -2376,7 +2376,7 @@ function mbarrier_arrive_nocomplete(
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.mbarrier.arrive.nocomplete",
         location;
         operands,
@@ -2397,7 +2397,7 @@ function mbarrier_arrive_nocomplete_shared(
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.mbarrier.arrive.nocomplete.shared",
         location;
         operands,
@@ -2416,7 +2416,7 @@ function mbarrier_arrive(addr::Value; res::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.mbarrier.arrive",
         location;
         operands,
@@ -2435,7 +2435,7 @@ function mbarrier_arrive_shared(addr::Value; res::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.mbarrier.arrive.shared",
         location;
         operands,
@@ -2457,7 +2457,7 @@ function mbarrier_init(
     attributes = NamedAttribute[]
     !isnothing(predicate) && push!(operands, predicate)
 
-    return create_operation(
+    create_operation(
         "nvvm.mbarrier.init",
         location;
         operands,
@@ -2479,7 +2479,7 @@ function mbarrier_init_shared(
     attributes = NamedAttribute[]
     !isnothing(predicate) && push!(operands, predicate)
 
-    return create_operation(
+    create_operation(
         "nvvm.mbarrier.init.shared",
         location;
         operands,
@@ -2498,7 +2498,7 @@ function mbarrier_inval(addr::Value; location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.mbarrier.inval",
         location;
         operands,
@@ -2517,7 +2517,7 @@ function mbarrier_inval_shared(addr::Value; location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.mbarrier.inval.shared",
         location;
         operands,
@@ -2536,7 +2536,7 @@ function mbarrier_test_wait(addr::Value, state::Value; res::IR.Type, location=Lo
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.mbarrier.test.wait",
         location;
         operands,
@@ -2557,7 +2557,7 @@ function mbarrier_test_wait_shared(
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.mbarrier.test.wait.shared",
         location;
         operands,
@@ -2578,7 +2578,7 @@ function mbarrier_try_wait_parity(
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.mbarrier.try_wait.parity",
         location;
         operands,
@@ -2599,7 +2599,7 @@ function mbarrier_try_wait_parity_shared(
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.mbarrier.try_wait.parity.shared",
         location;
         operands,
@@ -2618,7 +2618,7 @@ function mapa(a::Value, b::Value; res::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.mapa",
         location;
         operands,
@@ -2733,7 +2733,7 @@ function mma_sync(
     !isnothing(multiplicandBPtxType) &&
         push!(attributes, namedattribute("multiplicandBPtxType", multiplicandBPtxType))
 
-    return create_operation(
+    create_operation(
         "nvvm.mma.sync",
         location;
         operands,
@@ -2755,7 +2755,7 @@ function prefetch_tensormap(
     attributes = NamedAttribute[]
     !isnothing(predicate) && push!(operands, predicate)
 
-    return create_operation(
+    create_operation(
         "nvvm.prefetch.tensormap",
         location;
         operands,
@@ -2774,7 +2774,7 @@ function rcp_approx_ftz_f(arg::Value; res::IR.Type, location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.rcp.approx.ftz.f",
         location;
         operands,
@@ -2817,7 +2817,7 @@ function redux_sync(
     !isnothing(abs) && push!(attributes, namedattribute("abs", abs))
     !isnothing(nan) && push!(attributes, namedattribute("nan", nan))
 
-    return create_operation(
+    create_operation(
         "nvvm.redux.sync",
         location;
         operands,
@@ -2838,7 +2838,7 @@ function setmaxregister(; regCount, action, location=Location())
         namedattribute("regCount", regCount), namedattribute("action", action)
     ]
 
-    return create_operation(
+    create_operation(
         "nvvm.setmaxregister",
         location;
         operands,
@@ -2884,7 +2884,7 @@ function shfl_sync(
         namedattribute("return_value_and_is_valid", return_value_and_is_valid),
     )
 
-    return create_operation(
+    create_operation(
         "nvvm.shfl.sync",
         location;
         operands,
@@ -2904,7 +2904,7 @@ function read_ptx_sreg_nsmid(; res::IR.Type, range=nothing, location=Location())
     attributes = NamedAttribute[]
     !isnothing(range) && push!(attributes, namedattribute("range", range))
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.nsmid",
         location;
         operands,
@@ -2924,7 +2924,7 @@ function read_ptx_sreg_smid(; res::IR.Type, range=nothing, location=Location())
     attributes = NamedAttribute[]
     !isnothing(range) && push!(attributes, namedattribute("range", range))
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.smid",
         location;
         operands,
@@ -2951,7 +2951,7 @@ function stmatrix(ptr::Value, sources::Vector{Value}; layout, location=Location(
     successors = Block[]
     attributes = NamedAttribute[namedattribute("layout", layout),]
 
-    return create_operation(
+    create_operation(
         "nvvm.stmatrix",
         location;
         operands,
@@ -2970,7 +2970,7 @@ function bar_warp_sync(mask::Value; location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.bar.warp.sync",
         location;
         operands,
@@ -2999,7 +2999,7 @@ function tcgen05_alloc(addr::Value, nCols::Value; group=nothing, location=Locati
     attributes = NamedAttribute[]
     !isnothing(group) && push!(attributes, namedattribute("group", group))
 
-    return create_operation(
+    create_operation(
         "nvvm.tcgen05.alloc",
         location;
         operands,
@@ -3038,7 +3038,7 @@ function tcgen05_commit(
     !isnothing(multicastMask) && push!(operands, multicastMask)
     !isnothing(group) && push!(attributes, namedattribute("group", group))
 
-    return create_operation(
+    create_operation(
         "nvvm.tcgen05.commit",
         location;
         operands,
@@ -3088,7 +3088,7 @@ function tcgen05_cp(
     !isnothing(multicast) && push!(attributes, namedattribute("multicast", multicast))
     !isnothing(srcFormat) && push!(attributes, namedattribute("srcFormat", srcFormat))
 
-    return create_operation(
+    create_operation(
         "nvvm.tcgen05.cp",
         location;
         operands,
@@ -3117,7 +3117,7 @@ function tcgen05_dealloc(taddr::Value, nCols::Value; group=nothing, location=Loc
     attributes = NamedAttribute[]
     !isnothing(group) && push!(attributes, namedattribute("group", group))
 
-    return create_operation(
+    create_operation(
         "nvvm.tcgen05.dealloc",
         location;
         operands,
@@ -3146,7 +3146,7 @@ function tcgen05_fence(; kind, location=Location())
     successors = Block[]
     attributes = NamedAttribute[namedattribute("kind", kind),]
 
-    return create_operation(
+    create_operation(
         "nvvm.tcgen05.fence",
         location;
         operands,
@@ -3175,7 +3175,7 @@ function tcgen05_relinquish_alloc_permit(; group=nothing, location=Location())
     attributes = NamedAttribute[]
     !isnothing(group) && push!(attributes, namedattribute("group", group))
 
-    return create_operation(
+    create_operation(
         "nvvm.tcgen05.relinquish_alloc_permit",
         location;
         operands,
@@ -3205,7 +3205,7 @@ function tcgen05_shift(taddr::Value; group=nothing, location=Location())
     attributes = NamedAttribute[]
     !isnothing(group) && push!(attributes, namedattribute("group", group))
 
-    return create_operation(
+    create_operation(
         "nvvm.tcgen05.shift",
         location;
         operands,
@@ -3234,7 +3234,7 @@ function tcgen05_wait(; kind, location=Location())
     successors = Block[]
     attributes = NamedAttribute[namedattribute("kind", kind),]
 
-    return create_operation(
+    create_operation(
         "nvvm.tcgen05.wait",
         location;
         operands,
@@ -3254,7 +3254,7 @@ function read_ptx_sreg_tid_x(; res::IR.Type, range=nothing, location=Location())
     attributes = NamedAttribute[]
     !isnothing(range) && push!(attributes, namedattribute("range", range))
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.tid.x",
         location;
         operands,
@@ -3274,7 +3274,7 @@ function read_ptx_sreg_tid_y(; res::IR.Type, range=nothing, location=Location())
     attributes = NamedAttribute[]
     !isnothing(range) && push!(attributes, namedattribute("range", range))
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.tid.y",
         location;
         operands,
@@ -3294,7 +3294,7 @@ function read_ptx_sreg_tid_z(; res::IR.Type, range=nothing, location=Location())
     attributes = NamedAttribute[]
     !isnothing(range) && push!(attributes, namedattribute("range", range))
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.tid.z",
         location;
         operands,
@@ -3313,7 +3313,7 @@ function vote_ballot_sync(mask::Value, pred::Value; res::IR.Type, location=Locat
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.vote.ballot.sync",
         location;
         operands,
@@ -3350,7 +3350,7 @@ function wmma_load(
         namedattribute("frag", frag),
     ]
 
-    return create_operation(
+    create_operation(
         "nvvm.wmma.load",
         location;
         operands,
@@ -3388,7 +3388,7 @@ function wmma_mma(
         namedattribute("eltypeB", eltypeB),
     ]
 
-    return create_operation(
+    create_operation(
         "nvvm.wmma.mma",
         location;
         operands,
@@ -3423,7 +3423,7 @@ function wmma_store(
         namedattribute("eltype", eltype),
     ]
 
-    return create_operation(
+    create_operation(
         "nvvm.wmma.store",
         location;
         operands,
@@ -3443,7 +3443,7 @@ function read_ptx_sreg_nwarpid(; res::IR.Type, range=nothing, location=Location(
     attributes = NamedAttribute[]
     !isnothing(range) && push!(attributes, namedattribute("range", range))
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.nwarpid",
         location;
         operands,
@@ -3463,7 +3463,7 @@ function read_ptx_sreg_warpid(; res::IR.Type, range=nothing, location=Location()
     attributes = NamedAttribute[]
     !isnothing(range) && push!(attributes, namedattribute("range", range))
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.warpid",
         location;
         operands,
@@ -3483,7 +3483,7 @@ function read_ptx_sreg_warpsize(; res::IR.Type, range=nothing, location=Location
     attributes = NamedAttribute[]
     !isnothing(range) && push!(attributes, namedattribute("range", range))
 
-    return create_operation(
+    create_operation(
         "nvvm.read.ptx.sreg.warpsize",
         location;
         operands,
@@ -3510,7 +3510,7 @@ function wgmma_fence_aligned(; location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.wgmma.fence.aligned",
         location;
         operands,
@@ -3536,7 +3536,7 @@ function wgmma_commit_group_sync_aligned(; location=Location())
     successors = Block[]
     attributes = NamedAttribute[]
 
-    return create_operation(
+    create_operation(
         "nvvm.wgmma.commit.group.sync.aligned",
         location;
         operands,
@@ -3641,7 +3641,7 @@ function wgmma_mma_async(
     ]
     !isnothing(satfinite) && push!(attributes, namedattribute("satfinite", satfinite))
 
-    return create_operation(
+    create_operation(
         "nvvm.wgmma.mma_async",
         location;
         operands,
@@ -3667,7 +3667,7 @@ function wgmma_wait_group_sync_aligned(; group, location=Location())
     successors = Block[]
     attributes = NamedAttribute[namedattribute("group", group),]
 
-    return create_operation(
+    create_operation(
         "nvvm.wgmma.wait.group.sync.aligned",
         location;
         operands,
