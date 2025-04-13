@@ -291,7 +291,7 @@ for (dialect, op) in
             res = MLIR.IR.result(
                 $(:($dialect.$op))(
                     x.mlir_data;
-                    $(result)=mlir_type(TracedRArray{Bool,N}, size(x)),
+                    ($(result))=mlir_type(TracedRArray{Bool,N}, size(x)),
                     location,
                 ),
             )
@@ -304,7 +304,7 @@ for (dialect, op) in
         ) where {T}
             res = MLIR.IR.result(
                 $(:($dialect.$op))(
-                    x.mlir_data; $(result)=mlir_type(TracedRArray{Bool,0}, ()), location
+                    x.mlir_data; ($(result))=mlir_type(TracedRArray{Bool,0}, ()), location
                 ),
             )
             return TracedRNumber{Bool}((), res)
@@ -1057,15 +1057,14 @@ end
         sample_inputs[2i - 1] = Reactant.ConcretePJRTNumber(T(0))
         sample_inputs[2i] = Reactant.ConcretePJRTNumber(T(0))
     end
-    func =
-        Reactant.TracedUtils.make_mlir_fn(
-            comparator,
-            (sample_inputs...,),
-            (),
-            "comparator";
-            args_in_result=:none,
-            return_dialect=:stablehlo,
-        ).f
+    func = Reactant.TracedUtils.make_mlir_fn(
+        comparator,
+        (sample_inputs...,),
+        (),
+        "comparator";
+        args_in_result=:none,
+        return_dialect=:stablehlo,
+    ).f
     @assert MLIR.IR.nregions(func) == 1
     fn_name = String(
         MLIR.IR.attr(func, String(MLIR.API.mlirSymbolTableGetSymbolAttributeName()))
@@ -1665,29 +1664,27 @@ end
 
     input_types = [mlir_type(arg) for arg in linear_args]
 
-    cond_fn_compiled =
-        Reactant.TracedUtils.make_mlir_fn(
-            cond_fn,
-            traced_args,
-            (),
-            string(gensym("cond_fn")),
-            false;
-            return_dialect=:stablehlo,
-            args_in_result=:none,
-            do_transpose=false,
-        ).f
+    cond_fn_compiled = Reactant.TracedUtils.make_mlir_fn(
+        cond_fn,
+        traced_args,
+        (),
+        string(gensym("cond_fn")),
+        false;
+        return_dialect=:stablehlo,
+        args_in_result=:none,
+        do_transpose=false,
+    ).f
 
-    body_fn_compiled =
-        Reactant.TracedUtils.make_mlir_fn(
-            body_fn,
-            traced_args,
-            (),
-            string(gensym("body_fn")),
-            false;
-            return_dialect=:stablehlo,
-            args_in_result=:none,
-            do_transpose=false,
-        ).f
+    body_fn_compiled = Reactant.TracedUtils.make_mlir_fn(
+        body_fn,
+        traced_args,
+        (),
+        string(gensym("body_fn")),
+        false;
+        return_dialect=:stablehlo,
+        args_in_result=:none,
+        do_transpose=false,
+    ).f
 
     cond_reg = Reactant.TracedUtils.__take_region(cond_fn_compiled)
     body_reg = Reactant.TracedUtils.__take_region(body_fn_compiled)

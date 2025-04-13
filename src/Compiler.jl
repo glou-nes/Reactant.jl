@@ -1099,7 +1099,7 @@ function compile_call_expr(mod, compiler, options::Dict, args...)
         $(compiled_symbol) = $(compiler)(
             $(f_symbol),
             $(args_symbol);
-            fn_kwargs=$(kwargs_symbol),
+            fn_kwargs=($(kwargs_symbol)),
             $(Expr.(:kw, keys(options), values(options))...),
         )
     end,
@@ -1396,11 +1396,7 @@ Generate Julia code to call the XLA executable.
 - `nresults`: The number of results to expect.
 """
 function codegen_xla_call(
-    flatten_names,
-    donated_args_mask,
-    nresults,
-    is_sharded::Bool,
-    ndevices::Int,
+    flatten_names, donated_args_mask, nresults, is_sharded::Bool, ndevices::Int
 )
     flatten_buffer_refs = map(n -> :($n.buffer), flatten_names)
 
